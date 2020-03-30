@@ -5,12 +5,10 @@ import AsideBlurb from './AsideBlurb';
 
 function MainContent() {
   return (
-    <div className="main-container">
-      <main>
-        <AsideBlurb />  
-        <ListSection />  
-      </main>
-    </div>
+    <main className="main-container">
+      <AsideBlurb />  
+      <ListSection />  
+    </main>
   );
 }
 
