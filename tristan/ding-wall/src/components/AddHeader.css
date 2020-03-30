@@ -1,0 +1,12 @@
+
+.header-container {
+  background-image: url("../house-img.jpg");
+  background-size: cover;
+  background-position: 30% 68%;
+  position: relative;
+  text-align: center;
+  width: 100%;
+  color: #ffffff;
+  padding: 7em 7em 1em 7em;
+  box-sizing: border-box;
+}
