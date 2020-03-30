@@ -1,0 +1,9 @@
+
+.list-container {
+    float: left;
+    padding: 3em;
+  }
+
+.list-container h2 {
+    text-align: center;
+}  
