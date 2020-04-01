@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
-import './CreateTask.css';
+import './InputForm.css';
 
 
-function CreateTask( { addTask }) {
-  const [value, setValue] = useState("");
+function InputForm( {addTask} ) {
+  const [value, setValue] = useState(""); 
 
+  // I have no love for this syntax:
   const handleSubmit = e => {
     e.preventDefault();
     if (!value) return;
-
+  
     addTask(value);
     setValue("");
   }
-  
+
   return (
     <form onSubmit={handleSubmit}>
       <input
@@ -22,9 +23,9 @@ function CreateTask( { addTask }) {
         value={value} 
         onChange={e => setValue(e.target.value)}
       />
+      <input type="submit" value="Submit" />
     </form>
-
-  );
+  );  
 }
 
-export default CreateTask;
+export default InputForm;
