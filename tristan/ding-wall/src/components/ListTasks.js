@@ -33,10 +33,8 @@ function ListTasks() {
 
   const [tasks, setTasks] = useState(initialTasks);  
 
-  // arghh:
   const addTask = text => {
-    const newTasks = [...tasks, { text }];
-      setTasks(newTasks);
+    setTasks([...tasks, { text }]);
   };
 
   return (
