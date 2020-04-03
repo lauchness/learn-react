@@ -5,7 +5,6 @@ import './InputForm.css';
 function InputForm( {addTask} ) {
   const [value, setValue] = useState(""); 
 
-  // I have no love for this syntax:
   const handleSubmit = e => {
     e.preventDefault();
     if (!value) return;
@@ -23,7 +22,7 @@ function InputForm( {addTask} ) {
         value={value} 
         onChange={e => setValue(e.target.value)}
       />
-      <input type="submit" value="Submit" />
+      <input type="submit" value="Add" />
     </form>
   );  
 }
