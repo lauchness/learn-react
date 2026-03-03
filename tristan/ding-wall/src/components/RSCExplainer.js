@@ -28,6 +28,12 @@ function RSCExplainer() {
           Benefits
         </button>
         <button
+          className={activeTab === 'use' ? 'tab-active' : ''}
+          onClick={() => setActiveTab('use')}
+        >
+          use() Hook
+        </button>
+        <button
           className={activeTab === 'examples' ? 'tab-active' : ''}
           onClick={() => setActiveTab('examples')}
         >
@@ -138,6 +144,107 @@ function RSCExplainer() {
                 Server Components enable fine-grained, automatic code splitting without manual
                 configuration or intervention.
               </p>
+            </div>
+          </div>
+        )}
+
+        {activeTab === 'use' && (
+          <div className="tab-content">
+            <h2>The use() Hook</h2>
+
+            <p>
+              The <code>use()</code> hook is a new React API introduced in React 18/19 that allows you to
+              read the value of a resource like a Promise or Context. Unlike traditional hooks,
+              <code>use()</code> can be called conditionally and in loops.
+            </p>
+
+            <div className="benefit-card">
+              <h3>Reading Promises with use()</h3>
+              <p>
+                The <code>use()</code> hook can unwrap Promises directly in your components, making it easier
+                to work with async data without useEffect. This is particularly powerful in Server Components.
+              </p>
+              <div className="code-example">
+                <pre>
+                  <code>{`import { use } from 'react';
+
+async function fetchUser(id) {
+  const res = await fetch(\`/api/users/\${id}\`);
+  return res.json();
+}
+
+function UserProfile({ userPromise }) {
+  // use() unwraps the Promise
+  const user = use(userPromise);
+
+  return <div>{user.name}</div>;
+}
+
+// Parent component
+function App() {
+  const userPromise = fetchUser(123);
+  return <UserProfile userPromise={userPromise} />;
+}`}</code>
+                </pre>
+              </div>
+            </div>
+
+            <div className="benefit-card">
+              <h3>Key Features</h3>
+              <ul>
+                <li><strong>Can be conditional:</strong> Unlike other hooks, use() can be called inside if statements and loops</li>
+                <li><strong>Suspense integration:</strong> Automatically integrates with React Suspense for loading states</li>
+                <li><strong>Works with Context:</strong> Can also read Context values as an alternative to useContext</li>
+                <li><strong>Server & Client:</strong> Works in both Server and Client Components</li>
+              </ul>
+            </div>
+
+            <div className="benefit-card">
+              <h3>use() vs useEffect for Data Fetching</h3>
+              <div className="comparison-grid">
+                <div className="comparison-card client">
+                  <h4>Traditional useEffect</h4>
+                  <div className="code-example">
+                    <pre>
+                      <code>{`function User({ id }) {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    fetch(\`/api/users/\${id}\`)
+      .then(r => r.json())
+      .then(setUser);
+  }, [id]);
+
+  if (!user) return 'Loading...';
+  return <div>{user.name}</div>;
+}`}</code>
+                    </pre>
+                  </div>
+                </div>
+
+                <div className="comparison-card server">
+                  <h4>Modern use() Hook</h4>
+                  <div className="code-example">
+                    <pre>
+                      <code>{`function User({ userPromise }) {
+  const user = use(userPromise);
+
+  return <div>{user.name}</div>;
+}
+
+// Wrap with Suspense
+<Suspense fallback="Loading...">
+  <User userPromise={fetchUser(id)} />
+</Suspense>`}</code>
+                    </pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="info-box">
+              <strong>Note:</strong> The <code>use()</code> hook is available in React 18+ and React 19.
+              This repository uses React 16.13, which does not support this feature.
             </div>
           </div>
         )}
