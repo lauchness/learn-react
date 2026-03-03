@@ -207,11 +207,7 @@ function TodoItem({ todo }) {
             </div>
 
             <div className="info-box">
-              <strong>Want to learn more?</strong> Check out the comprehensive{' '}
-              <a href="/RSC-EXPLAINED.md" target="_blank" rel="noopener noreferrer">
-                RSC-EXPLAINED.md
-              </a>{' '}
-              documentation in the repository root.
+              <strong>Want to learn more?</strong> Explore the tabs above for comprehensive information about React Server Components, including benefits, use cases, and code examples.
             </div>
           </div>
         )}
