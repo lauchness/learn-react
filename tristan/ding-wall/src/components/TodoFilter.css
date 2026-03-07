@@ -1,0 +1,149 @@
+.todo-filter-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.todo-filter-container h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.filters {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: white;
+  border-radius: 4px;
+}
+
+.filters label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.filters select {
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.stats {
+  padding: 10px;
+  background-color: #e3f2fd;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+.stats p {
+  margin: 0;
+  font-weight: bold;
+  color: #1976d2;
+}
+
+.todo-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.todo-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  margin-bottom: 8px;
+  background-color: white;
+  border-radius: 4px;
+  border-left: 4px solid #ccc;
+}
+
+.todo-list li.priority-high {
+  border-left-color: #f44336;
+}
+
+.todo-list li.priority-medium {
+  border-left-color: #ff9800;
+}
+
+.todo-list li.priority-low {
+  border-left-color: #4caf50;
+}
+
+.todo-list li.completed {
+  opacity: 0.6;
+  text-decoration: line-through;
+}
+
+.priority-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+
+.priority-high .priority-badge {
+  background-color: #ffebee;
+  color: #c62828;
+}
+
+.priority-medium .priority-badge {
+  background-color: #fff3e0;
+  color: #e65100;
+}
+
+.priority-low .priority-badge {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+.todo-text {
+  flex: 1;
+}
+
+.check-mark {
+  color: #4caf50;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.explanation {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 4px;
+  border: 1px solid #e0e0e0;
+}
+
+.explanation h3 {
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.explanation ul {
+  margin: 10px 0;
+  padding-left: 20px;
+}
+
+.explanation li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.explanation strong {
+  color: #1976d2;
+}
+
+.explanation em {
+  color: #666;
+  font-size: 14px;
+}

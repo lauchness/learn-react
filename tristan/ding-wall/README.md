@@ -51,6 +51,20 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/co
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
+### Using useMemo for Performance
+
+The `useMemo` hook helps optimize performance by memoizing expensive computations. It prevents unnecessary recalculations by caching results and only recomputing when dependencies change. This is particularly useful for filtering large lists, complex calculations, or expensive object transformations in functional components.
+
+**See it in action:** Check out `src/components/TodoFilter.js` for a practical example that demonstrates:
+- Memoizing filtered and sorted todo lists to avoid expensive recalculations
+- Using dependency arrays to control when memoized values are recomputed
+- Chaining multiple `useMemo` hooks for complex derived state
+- Console logging to visualize when recalculations happen
+
+The TodoFilter component is integrated into the main app and includes detailed inline comments explaining how `useMemo` is being used correctly for performance optimization.
+
+Learn more about performance optimization with useMemo: https://reactjs.org/docs/hooks-reference.html#usememo
+
 ### Making a Progressive Web App
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
